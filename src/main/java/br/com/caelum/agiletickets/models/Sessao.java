@@ -120,5 +120,13 @@ public class Sessao {
 	public BigDecimal getPreco() {
 		return preco;
 	}
+
+	public double getPercentualDeIngressosRestantes() {
+		return (getTotalIngressos() - getIngressosReservados()) / getTotalIngressos().doubleValue();
+	}
+
+	public BigDecimal calculaAcrescimoDe(BigDecimal percentual) {
+		return preco.multiply(percentual);
+	}
 	
 }
