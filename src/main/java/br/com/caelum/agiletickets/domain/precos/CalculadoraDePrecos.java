@@ -7,8 +7,7 @@ import br.com.caelum.agiletickets.models.Sessao;
 public class CalculadoraDePrecos {
 
 	public static BigDecimal calcula(Sessao sessao, Integer quantidade) {
-		BigDecimal preco = sessao.getEspetaculo().getTipo().calculaPreco(sessao);
-		return preco.multiply(BigDecimal.valueOf(quantidade));
+		return sessao.calculaValorPara(quantidade);
 	}
 
 }

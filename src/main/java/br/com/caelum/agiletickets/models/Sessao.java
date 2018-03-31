@@ -128,5 +128,11 @@ public class Sessao {
 	public BigDecimal calculaAcrescimoDe(BigDecimal percentual) {
 		return preco.multiply(percentual);
 	}
+
+	public BigDecimal calculaValorPara(Integer quantidade) {
+		TipoDeEspetaculo tipo = espetaculo.getTipo();
+		BigDecimal precoUnitario = tipo.calculaPreco(this);
+		return precoUnitario.multiply(BigDecimal.valueOf(quantidade));
+	}
 	
 }
